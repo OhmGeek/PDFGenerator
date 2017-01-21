@@ -1,8 +1,15 @@
 <?php
-use mikehaertl/phpwkhtmltopdf;
+include_once 'vendor/autoload.php';
 
-$html_data = $_POST['html'];
+use mikehaertl\wkhtmlto\Pdf;
 
-$pdf = new PDF($html_data);
+$html_data = $_GET['html'];
+$options = array(
+    'binary' => '/usr/bin/wkhtmltopdf',
+);
 
-$pdf->send('report.pdf');
+$pdf = new Pdf($html_data);
+$pdf->setOptions($options);
+if(!$pdf->send()) {
+	echo $pdf->getError();
+}
