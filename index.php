@@ -1,9 +1,12 @@
 <?php
-$path_of_wkhtmltopdf = "/usr/bin/wkhtmltopdf";
-$read_filename = "http://google.co.uk";
+
+$html_data = $_POST['html_content'];
+$tmpinput = tmpFile();
+
+fwrite($tmpinput,$html_data);
 
 $gen = new PDFGenerator();
-$gen->generate_pdf($read_filename,"test.pdf");
+$gen->generate_pdf($tmpinput,"test.pdf");
 
 
 class PDFGenerator {
