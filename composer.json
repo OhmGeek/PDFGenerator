@@ -1,0 +1,15 @@
+{
+    "name": "ohmgeek/pdf-generator",
+    "description": "PDF Generator for the CEP Project",
+    "require": {
+        "mikehaertl/phpwkhtmltopdf": "^2.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "OhmGeek",
+            "email": "ryan@ohmgeek.co.uk"
+        }
+    ],
+    "minimum-stability": "alpha"
+}
